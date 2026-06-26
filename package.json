@@ -1,14 +1,23 @@
 {
   "name": "md-slots",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "0.1.0",
+  "description": "Tiny {{slot}} renderer for markdown text.",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "lint": "oxlint",
+    "format": "oxfmt --write .",
+    "check": "pnpm lint && pnpm test && pnpm build"
+  },
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {
     "@types/node": "^26.0.1",
