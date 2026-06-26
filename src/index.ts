@@ -32,6 +32,10 @@ export function renderSlots(
   },
 ): string {
   return template.replace(slotPattern, (_match, name: string) => {
+    if (!Object.hasOwn(values, name)) {
+      throw new Error(`Missing slot: ${name}`);
+    }
+
     const value = values[name];
 
     if (value === null || value === undefined) {

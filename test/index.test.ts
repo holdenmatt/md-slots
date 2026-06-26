@@ -41,6 +41,12 @@ describe("renderSlots", () => {
     expect(() => renderSlots("{{name}}", { name: undefined })).toThrow("Missing slot: name");
   });
 
+  it("throws when a slot is only inherited", () => {
+    const values = Object.create({ name: "Ada" }) as Record<string, unknown>;
+
+    expect(() => renderSlots("{{name}}", values)).toThrow("Missing slot: name");
+  });
+
   it("renders repeated slots each time", () => {
     expect(renderSlots("{{name}}/{{ name }}/{{name}}", { name: "x" })).toBe("x/x/x");
   });
