@@ -5,8 +5,9 @@
     "moduleResolution": "NodeNext",
     "strict": true,
     "declaration": true,
+    "rootDir": "src",
     "outDir": "dist",
     "verbatimModuleSyntax": true
   },
-  "include": ["src", "test"]
+  "include": ["src"]
 }
