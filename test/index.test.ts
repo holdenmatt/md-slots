@@ -29,9 +29,13 @@ describe("renderSlots", () => {
 
   it("uses a custom formatter when provided", () => {
     expect(
-      renderSlots("{{count}} {{name}}", { count: 3, name: "items" }, {
-        format: (value, name) => `${name}=${String(value)}`,
-      }),
+      renderSlots(
+        "{{count}} {{name}}",
+        { count: 3, name: "items" },
+        {
+          format: (value, name) => `${name}=${String(value)}`,
+        },
+      ),
     ).toBe("count=3 name=items");
   });
 

@@ -2,29 +2,31 @@
   "name": "md-slots",
   "version": "0.1.0",
   "description": "Tiny {{slot}} renderer for markdown text.",
+  "files": [
+    "dist"
+  ],
   "type": "module",
-  "private": true,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
     "lint": "oxlint",
     "format": "oxfmt --write .",
-    "check": "pnpm lint && pnpm test && pnpm build",
-    "prepare": "pnpm build"
+    "format:check": "oxfmt --check .",
+    "check": "pnpm format:check && pnpm lint && pnpm test && pnpm build",
+    "prepare": "tsc"
   },
-  "packageManager": "pnpm@10.33.0",
   "devDependencies": {
     "@types/node": "^26.0.1",
     "oxfmt": "^0.56.0",
     "oxlint": "^1.71.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9"
-  }
+  },
+  "packageManager": "pnpm@10.33.0"
 }
