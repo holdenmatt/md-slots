@@ -2,6 +2,11 @@
   "name": "md-slots",
   "version": "0.1.0",
   "description": "Tiny {{slot}} renderer for markdown text.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holdenmatt/md-slots.git"
+  },
   "files": [
     "dist"
   ],

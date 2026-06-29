@@ -5,7 +5,7 @@ Tiny `{{slot}}` renderer for markdown text.
 ## Install
 
 ```sh
-pnpm add github:Slider-Labs/md-slots
+npm install md-slots
 ```
 
 ## Usage
